@@ -1,0 +1,98 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+<ion-navbar>
+    <ion-title>Account information</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+
+<ion-header>
+    <ion-navbar color="">
+        <!-- <ion-buttons left>
+        <button ion-button icon-only class="text-trans-initial " (click)="goback()">
+          <span class="color-blue">Cancel</span>
+          <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+    </ion-buttons> -->
+        <ion-title class="fs-12">
+            <!-- Account information -->アカウント情報</ion-title>
+        <ion-buttons right>
+            <button ion-button class="text-trans-initial color-blue" (click)="UserConfirmation()">
+                <span class="color-blue">
+                    <!-- Done -->完了</span>
+                <!-- <ion-icon name="notifications"></ion-icon> -->
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <div class="text-center bor-bot-1">
+        <img [src]="user.user_icon" height="80" class="border" />
+       <!-- <p class="no-border text-blue fs-16">
+            Change Profile Photo プロフィール写真を変更</p> -->
+    </div>
+    <div class="center-div">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <p class="fs-w8-5">User name</p>
+                    <ion-input [(ngModel)]="user.username" placeholder="ユーザーネーム１２３" clearInput class="bor-bot-1"></ion-input>
+                </ion-col>
+            </ion-row>
+            <!--  <ion-row>
+        <ion-col>
+          <p class="marg-2 fs-w8-5">User ID</p>
+          <ion-input placeholder="abc"  class="bor-bot-1"></ion-input>
+        </ion-col>
+      </ion-row> -->
+            <ion-row>
+                <ion-col>
+                    <p class="marg-2 fs-w8-5">Mail Address</p>
+                    <ion-input [(ngModel)]="user.email" placeholder="Email" class="bor-bot-1"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <p class="marg-2 fs-w8-5">Password</p>
+                    <ion-input [(ngModel)]="user.password" type="password" placeholder="aaabbbccc" clearInput class="bor-bot-1"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <p class="marg-2 fs-w8-5">Re-Confirm Password</p>
+                    <ion-input [(ngModel)]="confpassword" type="password" placeholder="aaabbccc" clearInput class="bor-bot-1"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-label class="marg-2 fs-w8-5">Category</ion-label>
+                    <ion-select class="item item-block item-ios select-cat" [(ngModel)]="user.category" placeholder="中文維基百基百科" multiple="true">
+                        <ion-option class="width-100per" *ngFor="let item of categories" [disabled]="item.del_flag == 1" [value]="item.id">{{item.category_name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col>
+                    <ion-label class="marg-2 fs-w8-5">City</ion-label>
+                    <ion-select class="item item-block item-ios select-cat" palceholder="City" [(ngModel)]="user.city">
+                        <ion-option *ngFor="let c of cities" [value]="c.id">{{c.city_name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+
+
+            <br>
+            <br>
+        </ion-grid>
+    </div>
+</ion-content>

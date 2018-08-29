@@ -1,0 +1,52 @@
+﻿<ion-header>
+</ion-header>
+<ion-content padding class="app_color">
+    <p text-center>
+        <b>ユーザー情報入力</b>
+    </p>
+    <div class="text-center marg-top">
+        <img [src]="photo ? photo : 'assets/imgs/userse.png'" width="80" height="80" (click)="OpenCamera()" class="profile"/>
+    </div>
+    <div class="center-div">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <p class="fs-w8-5">Mail Address</p>
+                    <p class="marg-10">
+                        <strong>{{email}}</strong>
+                    </p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <p class="marg-2 fs-w8-5">Password</p>
+                    <input type="password" class="inp-box" (keyup)="AlphanumericPassword($event)" [(ngModel)]="password" minlength="6" maxlength="12"
+                    />
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <p class="marg-2 fs-w8-5">Re-Confirm Password</p>
+                    <input type="password" class="inp-box" (keyup)="AlphanumeriConfirm($event)" [(ngModel)]="confirmpassword" minlength="6" maxlength="12"
+                    />
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <p class="marg-2 fs-w8-5">User Name</p>
+                    <input type="text" [(ngModel)]="username" class="inp-box" />
+                </ion-col>
+            </ion-row>
+            <br>
+            <br>
+            <ion-row>
+                <ion-col col-6>
+                    <button class="btn width-100per bg-gre" (click)="goback()">Cancel</button>
+                </ion-col>
+                <ion-col col-6>
+                    <button class="btn width-100per btn-blue-autho" (click)="presentAlert()">Next</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

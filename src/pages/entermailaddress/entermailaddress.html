@@ -1,0 +1,36 @@
+﻿
+<!--
+  Generated template for the OtpauthorizationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+</ion-header>
+
+<ion-content class="app_color">
+  <div class="flex-center hi-100">
+    <div class="marg-top">
+      <div class="">
+        <h4 class="text-center">メールアドレス認証</h4>
+        <p text-center>メールアドレスに認証コードをお送りします。</p>
+      </div>
+      <div class="center-div">
+        <p class="marg-2 fs-w8-5 fs-16">メールアドレス</p>
+        <input type="email" class="inp-box"  [(ngModel)]="email"/>
+        <!-- <input type="text" class="form-control" placeholder="Name" name="Name" [(ngModel)]="email" required pattern="[a-z0-9A-Z]+@[a-z0-9]+\.[a-z]{2,3}$"> -->
+      </div>
+      <div class="marg-top text-center">
+        <button class="btn width-80 btn-blue-autho fs-16" (click)="gotoauthorization()">Send authorization code</button>
+      </div>
+      <div class="text-center margi-10">
+        <button class="btn width-80 bg-gre fs-16" (click)="goback()">Cancel</button>
+      </div>
+
+
+      </div>
+
+
+
+  </div>
+</ion-content>

@@ -1,0 +1,55 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+</ion-header>
+
+
+<ion-content padding class="app_color">
+
+    <div class="center-div flex-center hi-100">
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <p text-center> 興味があるカテゴリー・地域を選択してください </p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col (click)="GoSelectCat()">
+                    <ion-label class="marg-2">
+                        <b>
+                            <!-- Category -->カテゴリー</b>
+                    </ion-label>
+                    <ion-select palceholder="Category" multiple="true" [(ngModel)]="category" class="sel-box" disabled=true>
+                        <ion-option *ngFor="let cat of categories" [value]="cat.id" [disabled]="cat.del_flag">{{cat.category_name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col (click)="GoSelectCity()">
+                    <ion-label class="marg-2">
+                        <b>
+                            <!-- City -->都市</b>
+                    </ion-label>
+                    <ion-select palceholder="City" [(ngModel)]="city" class="sel-box" disabled=true>
+                        <ion-option *ngFor="let c of cities" [value]="c.id">{{c.city_name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+            <ion-row class="pad-100 marg-top">
+                <ion-col col-6 class="">
+                    <button class="btn width-100per bg-gre" (click)="goback()">Cancel</button>
+                </ion-col>
+                <ion-col col-6 class="">
+                    <button class="btn width-100per btn-cloud" (click)="GoTabsPage()">Register</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

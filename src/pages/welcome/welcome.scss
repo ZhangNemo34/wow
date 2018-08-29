@@ -1,0 +1,55 @@
+page-welcome {
+    .app_color {
+        background: linear-gradient(#5b7fbf, #b6d8ec);
+    }
+    .logo_height {
+        height: 120px !important;
+        background: url('../assets/imgs/wowlogo.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .marg-toplogo {
+        margin-top: 7%;
+    }
+    .txt-color-home {
+        color: white;
+    }
+    .fnt-size-18 {
+        font-size: 18px
+    }
+    .pad-10 {
+        padding: 10px;
+    }
+    .marg-0 {
+        margin: 14px;
+    }
+    .hiwid {
+        width: 50% !important;
+    }
+    .fixed-bottom {
+        position: fixed;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .fixed-center {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -20%);
+    }
+    @media screen and (min-width: 350px) {
+        .logo_height {
+            height: 200px;
+        }
+    }
+    @media screen and (min-width: 750px) {
+        .logo_height {
+            height: 300px;
+        }
+    }
+}

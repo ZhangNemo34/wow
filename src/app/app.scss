@@ -1,0 +1,829 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.toolbar-background {
+    /*background-color: #0b4042 !important;*/
+    color: 000 !important;
+}
+
+image-viewer.ion-page ion-navbar .bar-button-default .button-inner .ion-md-arrow-back:before {
+    color: white !important;
+    content: "\f14d" !important;
+    font-size: 3.4rem !important;
+}
+
+image-viewer.ion-page ion-navbar .bar-button-default {
+    color: white;
+    right: 0px !important;
+}
+
+image-viewer.ion-page ion-navbar .bar-button-default .button-inner .ion-ios-arrow-back:before {
+    color: white !important;
+    content: "\f14d" !important;
+    font-size: 3.4rem !important;
+}
+
+/*
+image-viewer.ion-page ion-navbar .bar-button-default .button-inner .back-button-text {
+       color: white !important;
+    font-size: 16px;
+    border: 2px solid;
+    border-radius: 34px;
+    height: 30px;
+    padding: 8px;
+}*/
+
+.gps-posi {
+    z-index: 99999;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    width: 42px;
+}
+
+.map-text {
+    z-index: 99999;
+    position: absolute;
+    right: 10px;
+    bottom: 16px;
+    width: 170px;
+}
+
+.back-index {
+    z-index: 999999 !important;
+    padding: 0px 6px !important;
+}
+
+.direction-rtl {
+    direction: rtl !important;
+}
+
+.direction-ltr {
+    direction: ltr !important;
+}
+
+.pad-05 {
+    padding: 0px 5px !important;
+}
+
+.bor-pad-set {
+    border: 1px solid !important;
+    padding: 2px !important;
+}
+
+.box-p {
+    border: 1px solid !important;
+    padding: 10px !important;
+    width: 50% !important;
+}
+
+.bg-ligcloud {
+    background: #b5fbea !important;
+}
+
+image-viewer.ion-page .image-wrapper {
+    margin-top: 0px !important;
+}
+
+.text-trans-initial {
+    text-transform: initial !important;
+}
+
+.backbtn {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 2.6em;
+}
+
+.posi-rel {
+    position: relative;
+}
+
+.bor-bot-1 {
+    border-bottom: 1px solid #c1c0c0 !important;
+}
+
+.border {
+    border: 1px solid #d4d3d3 !important;
+}
+
+.blue-btn-bor {
+    border: 1px solid #3b52b2 !important;
+    background: white !important;
+    color: #3b52b2 !important;
+}
+
+.blue-light {
+    color: #596fbf !important;
+}
+
+.border-blue {
+    border: 1px solid #3b52b2 !important;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.bg-blues {
+    background: #6c7dc5 !important;
+}
+
+.pad-5-10 {
+    padding: 5px 10px;
+}
+
+.swiper-slide img {
+    width: auto;
+    max-width: 100%;
+    height: 200px;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.ion-ios-hometabson,
+.ion-md-hometabson {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/imgs/tabs/homeon.png');
+    background-size: contain;
+}
+
+.ion-md-hometabson[ng-reflect-is-active=false],
+.ion-ios-hometabson[ng-reflect-is-active=false] {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/imgs/tabs/homeoff.png');
+    background-size: contain;
+}
+
+.ion-ios-tilestab,
+.ion-md-tilestab {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/imgs/tabs/tileson.png');
+    background-size: contain;
+}
+
+.ion-md-tilestab[ng-reflect-is-active=false],
+.ion-ios-tilestab[ng-reflect-is-active=false] {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/imgs/tabs/tilesoff.png');
+    background-size: contain;
+}
+
+.ion-ios-cameratab,
+.ion-md-cameratab {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/imgs/tabs/cameraon.png');
+    background-size: contain;
+}
+
+.ion-md-cameratab[ng-reflect-is-active=false],
+.ion-ios-cameratab[ng-reflect-is-active=false] {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/imgs/tabs/cameraoff.png');
+    background-size: contain;
+}
+
+.ion-ios-startab,
+.ion-md-startab {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/imgs/tabs/staron.png');
+    background-size: contain;
+}
+
+.ion-md-startab[ng-reflect-is-active=false],
+.ion-ios-startab[ng-reflect-is-active=false] {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/imgs/tabs/staroff.png');
+    background-size: contain;
+}
+
+.ion-ios-listtab,
+.ion-md-listtab {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/imgs/tabs/liston.png');
+    background-size: contain;
+}
+
+.ion-md-listtab[ng-reflect-is-active=false],
+.ion-ios-listtab[ng-reflect-is-active=false] {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/imgs/tabs/listoff.png');
+    background-size: contain;
+}
+
+.tab-button[aria-selected=true] .tab-button-icon {
+    color: #204990 !important;
+    font-weight: 600;
+    font-size: 34px;
+    margin-top: 8px;
+}
+
+.ltr-spc {
+    letter-spacing: 4px !important;
+}
+
+.selct-border {
+    border: 1px solid #d0d0d0;
+    border-radius: 20px;
+    padding: 2px 15px;
+}
+
+.btn-greys {
+    background: #95989a;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+}
+
+.btn-blueq {
+    background: #4a63bd;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 10px;
+}
+
+.bor-top {
+    border-top: 1px solid #a9a7a7 !important;
+}
+
+.bglytblue {
+    padding: 5px 26px;
+    background: #CDD3EB;
+    border-radius: 20px;
+    font-size: 10px;
+}
+
+.bor-bot {
+    border-bottom: 1px solid #a9a7a7 !important;
+}
+
+.bor-bot-gr {
+    border-bottom: 1px solid #dadada !important;
+}
+
+.mar-06 {
+    margin: 0px 6px !important;
+}
+
+.select-label {
+    margin: 0px !important;
+    max-width: 100% !important;
+    padding: 0px 6px 0px 0px !important;
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.select-icon-inner {
+    display: none;
+}
+
+.img-avtar {
+    border-radius: 20px;
+    width: 34px;
+    height: 34px;
+}
+
+.text-green {
+    color: #0b4042 !important;
+}
+
+.text-red {
+    color: red;
+    .toolbar-title {
+        color: red !important;
+    }
+}
+
+.hi-50 {
+    height: 50% !important;
+}
+
+.bg-bluee {
+    background: #3b52b2 !important;
+}
+
+.btn-set {
+    padding: 6px 8px;
+    border: 1px solid grey;
+    border-radius: 20px;
+}
+
+.bor-rad {
+    border-radius: 40px !important;
+}
+
+.login-btn {
+    border-radius: 40px !important;
+    background-color: #0b4042 !important;
+}
+
+.outline-btn {
+    border-radius: 40px !important;
+    border: 1px solid #0b4042 !important;
+}
+
+span.button-inner {
+    color: black;
+}
+
+.bg-con {
+    background-color: #0b4042 !important;
+}
+
+.header-md::after {
+    background-image: none !important;
+}
+
+.withdraw-btn {
+    width: 100% !important;
+    font-size: 1.2em !important;
+    background: #25af25 !important;
+}
+
+.bg-dark-green {
+    background-color: #21867c !important;
+}
+
+/*.input-has-focus{
+	border-bottom: 2px solid #21867c !important;
+}*/
+
+.invite-btn {
+    width: 60%;
+    font-size: 1.2em !important;
+    background: #00a59c !important;
+    border-radius: 0px;
+}
+
+.cash {
+    padding: 10px 60px;
+    border-style: dotted;
+}
+
+.text-green {
+    color: #00a59c !important;
+}
+
+.wid-100 {
+    width: 100% !important;
+}
+
+.update-btn {
+    width: 100% !important;
+    font-size: 1.2em !important;
+    background: #00a59c !important;
+}
+
+.tils-image {
+    height: 90px !important;
+    object-fit: cover;
+}
+
+.hi-100 {
+    height: 100% !important;
+}
+
+.content-background {
+    background-color: #00a59c !important;
+}
+
+.toolbar-title {
+    color: #fff !important;
+}
+
+button.back-button {
+    color: white;
+}
+
+.fs-8 {
+    font-size: 8px !important;
+}
+
+.fs-9 {
+    font-size: 9px !important;
+}
+
+.fs-10 {
+    font-size: 10px !important;
+}
+
+.fs-12 {
+    font-size: 12px !important;
+}
+
+.fs-13 {
+    font-size: 13px !important;
+}
+
+.fs-14 {
+    font-size: 14px !important;
+}
+
+.fs-15 {
+    font-size: 15px !important;
+}
+
+.fs-16 {
+    font-size: 16px !important;
+}
+
+.fs-18 {
+    font-size: 18px !important;
+}
+
+.fs-20 {
+    font-size: 20px !important;
+}
+
+.fs-22 {
+    font-size: 22px !important;
+}
+
+.fs-24 {
+    font-size: 24px !important;
+}
+
+.fs-26 {
+    font-size: 26px !important;
+}
+
+.fs-28 {
+    font-size: 28px !important;
+}
+
+.fs-30 {
+    font-size: 30px !important;
+}
+
+.fs-32 {
+    font-size: 32px !important;
+}
+
+.fs-42 {
+    font-size: 42px !important;
+}
+
+.fs-50 {
+    font-size: 50px !important;
+}
+
+/*.text-input::-moz-placeholder {
+  color: white;
+}
+
+.text-input:-ms-input-placeholder {
+  color: white;
+}
+
+.text-input::-webkit-input-placeholder {
+  text-indent: 0;
+  color: white;
+}*/
+
+.fs-55 {
+    font-size: 55px !important;
+}
+
+.text-align {
+    align-items: center;
+    display: flex;
+}
+
+.float-right {
+    float: right;
+}
+
+.pad-right {
+    padding-right: 20px !important;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.flex-center {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-underline {
+    text-decoration: underline !important;
+}
+
+.tex-posi {
+    position: absolute;
+    bottom: 0;
+}
+
+.font-w8 {
+    font-weight: 400 !important;
+}
+
+.fs-w8-300 {
+    font-weight: 300 !important;
+}
+
+.bg-white {
+    background: white !important;
+}
+
+.no-radius {
+    border-radius: 0px !important;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.bg-none {
+    background: none !important;
+}
+
+.bg-black {
+    background-color: black !important;
+}
+
+.bg-blue {
+    background: #3b5998 !important;
+}
+
+.bg-red {
+    background: #ed0707 !important;
+}
+
+.wid-100 {
+    width: 100% !important;
+}
+
+.padding-top {
+    padding-top: 10px !important;
+}
+
+.discount {
+    background: #f9cbcb;
+    padding: 0px 4px;
+    font-size: 10px;
+    color: red;
+    margin-left: 6px;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.color-trans {
+    color: transparent !important;
+}
+
+.mar-auto {
+    margin: auto !important;
+}
+
+.text-white-lyt {
+    color: #e9e7e6 !important;
+}
+
+.fs-w8-400 {
+    font-weight: 400 !important;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.text-black {
+    color: black !important;
+}
+
+.text-blue {
+    color: #3a51b2 !important;
+}
+
+.text-red {
+    color: #fa2525 !important;
+}
+
+.text-grey {
+    color: #b0b0b0 !important;
+}
+
+.text-yellow {
+    color: #e8e840 !important;
+}
+
+.image-ti {
+    width: 60px !important;
+}
+
+.toolbar-title {
+    color: black !important;
+}
+
+.radio-icon {
+    border: 1px solid #888686 !important;
+    border-radius: 20px !important;
+    width: 22px !important;
+    height: 22px !important;
+}
+
+.checkbox-icon {
+    border: 1px solid #888686 !important;
+    border-radius: 20px !important;
+    width: 22px !important;
+    height: 22px !important;
+}
+
+.checkbox-md .checkbox-checked .checkbox-inner {
+    left: 10px;
+    top: -4px;
+    position: absolute;
+    width: 8px;
+    height: 20px;
+    border-width: 4px;
+    border-radius: 10px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: #5df7e8;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: none !important;
+}
+
+.checkbox-ios .checkbox-checked .checkbox-inner {
+    left: 10px;
+    top: -4px;
+    position: absolute;
+    width: 8px;
+    height: 20px;
+    border-width: 4px;
+    border-radius: 10px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: #5df7e8;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.checkbox-md .checkbox-inner {
+    background-color: white !important;
+}
+
+.checkbox-md-dark .checkbox-checked {
+    border-color: #222;
+    background-color: #fff !important;
+}
+
+.item-checkbox-checked ion-label {
+    color: black !important;
+    font-weight: 600 !important;
+}
+
+ion-item.item.item-block.item-checkbox {
+    border: none;
+}
+
+ion-item.item.item-block.item-checkbox .item-inner {
+    border: none;
+}
+
+.icons-small {
+    width: 14px !important;
+}
+
+.fs-w8-5 {
+    font-weight: 500 !important;
+}
+
+.fs-w8-8 {
+    font-weight: 800 !important;
+}
+
+.radio-md .radio-checked .radio-inner {
+    left: 10px;
+    top: -4px;
+    position: absolute;
+    width: 8px;
+    height: 20px;
+    border-width: 4px;
+    border-radius: 10px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: #5df7e8;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: none !important;
+}
+
+.radio-ios .radio-checked .radio-inner {
+    left: 10px;
+    top: -4px;
+    position: absolute;
+    width: 8px;
+    height: 20px;
+    border-width: 4px;
+    border-radius: 10px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: #5df7e8;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.radio-md .radio-inner {
+    background-color: white !important;
+}
+
+.item-radio-checked ion-label {
+    color: black !important;
+    font-weight: 600 !important;
+}
+
+ion-item.item.item-block.item-radio {
+    border: none;
+}
+
+ion-item.item.item-block.item-radio .item-inner {
+    border: none;
+}
+
+.bg-gre {
+    background: #939ba1 !important;
+}
+
+span.back-button-text {
+    display: none;
+}
+
+ion-navbar button {
+    position: absolute !important;
+}
+
+button.back-button {
+    z-index: 99999;
+}
+
+ion-title.title {
+    text-align: center !important;
+}
+
+.toolbar-background {
+    background: white;
+}
+
+image-viewer.ion-page img {
+    max-height: 85vh !important;
+}

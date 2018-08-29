@@ -1,0 +1,43 @@
+page-list {
+
+ ion-navbar button {
+    position: relative !important;
+}
+
+.toolbar-title {
+    color: black !important;
+    font-size: 1.6rem !important;
+        align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-blue{
+    background: #3B52B2 !important;
+    border-radius: 20px !important;
+    padding: 10px !important;
+}
+
+.segment-button{
+         color: #000000 !important;
+    border-color: #ffffff !important;
+    background: white !important;
+    border-bottom: 1px solid #a9a7a7 !important;
+}
+
+.segment-activated {
+    border-color: white!important;
+    opacity: 1;
+    color: #495eb7!important;
+    background-color: white!important;
+    border: none !important;
+    border-width: 0px !important;
+    border-bottom: 2px solid #495eb7!important;
+}
+
+.card-tiles{
+	    padding: 10px 14px;
+    box-shadow: 0px 0px 2px 1px darkgrey;
+}
+
+}

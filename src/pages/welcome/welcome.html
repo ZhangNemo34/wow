@@ -1,0 +1,42 @@
+﻿<ion-header>
+
+</ion-header>
+
+<ion-content class="app_color">
+    <div class="text-center marg-toplogo logo_height">
+
+    </div>
+    <br>
+    <h4 class="text-center txt-color-home fnt-size-18 marg-0">ログイン方法を選んでください</h4>
+    <ion-grid class="fixed-center">
+        <ion-row>
+            <ion-col>
+                <div class="text-center pad-10" (click)="twitterLogin()">
+                    <img src="assets/imgs/twitter_logo.png" class="hiwid" />
+                    <p class="text-center marg-0 text-white fs-18">twitter</p>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="text-center pad-10" (click)="facebook()">
+                    <img src="assets/imgs/facebook_logo.png" class="hiwid" />
+                    <p class="text-center marg-0 text-white fs-18">Facebook</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="text-center pad-10" (click)="instagram()">
+                    <img src="assets/imgs/instagram_logo.png" class="hiwid" />
+                    <p class="text-center mar-auto text-white fs-18">Instagram</p>
+                </div>
+            </ion-col>
+            <ion-col>
+                <div class="text-center pad-10" (click)="goToNext()">
+                    <img src="assets/imgs/mail_logo.png" class="hiwid" />
+                    <p class="text-center marg-0 text-white fs-18">Mail address</p>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <h5 class="text-center text-blue fixed-bottom" (click)="gotoTabpage()">閲覧のみの方はこちら</h5>
+</ion-content>

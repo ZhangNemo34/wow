@@ -1,0 +1,44 @@
+<!--
+  Generated template for the LanguagesettingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="">
+    <!-- <ion-buttons left>
+        <button ion-button icon-only class="text-trans-initial " (click)="goback()">
+          <span class="color-blue">Cancel</span>
+          <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+    </ion-buttons> -->
+    <ion-title class="fs-12"><!-- Select Language -->言語選択</ion-title>
+    <ion-buttons right>
+      <button ion-button  class="text-trans-initial color-blue">
+        <span class="color-blue">完了</span>
+        <!-- <ion-icon name="notifications"></ion-icon> --></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-list class="mar-auto bor-top bor-bot" padding>
+		<h6><!-- Language -->言語選択</h6>
+	  <ion-row class=" selct-border">
+      <ion-col col-10 class="flex-center no-padding">
+        <ion-select class="select-label wid-100 ">
+           <!-- <ion-option value="Cm" [selected]="true">Please select</ion-option> -->
+		          <ion-option value="Ft" [selected]="true" >英语(English)</ion-option>
+		          <ion-option value="Fs" >日本(Japanese)</ion-option>
+        </ion-select>
+      </ion-col>
+      <ion-col col-2 class="flex-center">
+           <ion-icon name="ios-arrow-forward" class="fs-24"></ion-icon>
+
+      </ion-col>
+    </ion-row>
+	</ion-list>
+
+</ion-content>

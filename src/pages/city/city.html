@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-toolbar>
+			<ion-buttons left>
+					<button ion-button icon-only (click)="dismiss()">
+						<ion-icon name="ios-arrow-back"></ion-icon>
+					</button>
+				</ion-buttons>
+    <ion-title><!-- Select City -->地域選択</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	  <ion-list radio-group class="no-border" [(ngModel)]="city">
+	  	 <ion-list-header class="no-border text-blue fs-16">
+		    <!-- Please select one area you want to know information -->
+		    情報を知りたい地域を1つ選択してください
+			</ion-list-header>
+			<div class="text-align" *ngFor="let c of cities">
+					<span padding>{{c.city_name}}</span><ion-radio  [value]="c.id"></ion-radio>
+				</div>
+		  <!-- <div class="text-align">
+			  <span padding>日本/Tokyo</span><ion-radio  value="日本/Tokyo"></ion-radio>
+		  </div> -->
+		   <!-- <div class="text-align">
+			  <span padding>日本/Kansai</span><ion-radio  value="日本/Kansai"></ion-radio>
+		  </div>
+		   <div class="text-align">
+			  <span padding>日本/東北</span><ion-radio  value="日本/東北"></ion-radio>
+		  </div>
+		   <div class="text-align">
+			  <span padding>中国</span><ion-radio  value="de"></ion-radio>
+		  </div> -->
+	</ion-list>
+	   
+</ion-content>

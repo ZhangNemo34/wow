@@ -1,0 +1,26 @@
+page-postedit {
+    h2#alert-hdr-0 {
+        color: red !important;
+        text-align: center !important;
+    }
+    div#alert-msg-0 {
+        text-align: center !important;
+    }
+    .alert-wrapper {
+        border-radius: 20px !important;
+    }
+    .alert-button-group {
+        border-top: 1px solid #b5b4b4 !important;
+    }
+    ion-navbar button {
+        position: relative !important;
+    }
+    .toolbar-title {
+        color: black !important;
+        font-size: 16px;
+    }
+    button.text-trans-initial.color-blue {
+        border-color: #0202ad !important;
+        border-radius: 14px !important;
+    }
+}

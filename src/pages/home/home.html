@@ -1,0 +1,70 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+</ion-header>
+<ion-content>
+
+    <!-- <img src="assets/imgs/map.png"/> -->
+
+    <!-- <div class="posi-rel">
+			<img src="assets/imgs/gps.png" class="gps-posi" />
+		</div>
+
+	<div #map id="map" >
+
+	</div>  -->
+
+    <ion-row>
+        <ion-col class="no-padding">
+            <img src="assets/imgs/gps.png" class="gps-posi" (click)="forGeoLocation()" />
+            <img src="assets/imgs/mapname.png" class="map-text" (click)="launchNavigate()" />
+            <div #map id="map"></div>
+        </ion-col>
+    </ion-row>
+
+    <img src="assets/imgs/gps.png" class="gps-posi" (click)="forGeoLocation()" />
+
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6 *ngFor="let item of postAds">
+                <ion-card *ngIf="item.type == 1" no-padding no-margin flat-card (click)="GoselectCategory(item.id)">
+                    <ion-item class="no-padding">
+                        <ion-avatar item-start class="mar-06">
+                            <img [src]="item.user_icon" />
+                        </ion-avatar>
+                        <h2 class="ltr-spc low-text">{{item.user_name}}</h2>
+                        <p class=" fs-10 ">
+                            {{item.reg_date}}
+                        </p>
+                    </ion-item>
+                    <img [src]="item.file_name" height="160 " />
+                    <ion-card-content>
+                        <p class="ltr-spc mar-top-text" style="max-height: 28px;
+                        text-overflow: ellipsis;">{{item.comment}}</p>
+                    </ion-card-content>
+                </ion-card>
+                <ion-card *ngIf="item.type == 2" no-padding no-margin flat-card (click)="GoselectCatSlider(item.id)">
+                    <ion-item class="no-padding">
+                        <ion-avatar item-start class="mar-06">
+                            <img [src]="item.user_icon" />
+                        </ion-avatar>
+                        <h2 class="ltr-spc low-text">{{item.user_name}}</h2>
+                        <p class=" fs-10 ">
+                            {{item.reg_date}}
+                        </p>
+                    </ion-item>
+                    <img [src]="item.file_name" height="160 " />
+                    <ion-card-content>
+                        <p class="ltr-spc mar-top-text" style="max-height: 28px;
+                        text-overflow: ellipsis;">{{item.comment}}</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

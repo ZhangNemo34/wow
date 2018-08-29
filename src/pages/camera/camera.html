@@ -1,0 +1,137 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>
+            <!-- New Post -->新規投稿</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-row padding>
+        <ion-col col-4 style="position: relative;">
+            <img *ngIf="!base64Image" src="assets/imgs/camera.png" class="wid-100" (click)="presentActionSheet()" />
+            <img *ngIf="base64Image" [src]="base64Image" class="wid-100" />
+            <ion-icon name="ios-close-circle" class="" (click)="deletePhoto()" style="position: absolute;right: 14px;top: 14px;"></ion-icon>
+        </ion-col>
+        <ion-col col-8>
+            <ion-input type="text" placeholder="キャプションタイトル" [(ngModel)]="name"></ion-input>
+            <ion-textarea [(ngModel)]="comment" id="" placeholder="キャプションコメント" class="wid-100 hi-100 no-border">
+            </ion-textarea>
+        </ion-col>
+    </ion-row>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <ion-list class="mar-auto bor-top bor-bot" padding>
+        <h6>
+            <!-- Category Selection -->カテゴリ選択</h6>
+        <ion-row class=" selct-border">
+            <ion-col col-10 class="flex-center no-padding">
+                <ion-select class="select-label wid-100 " palceholder="Category" [(ngModel)]="category">
+                    <ion-option *ngFor="let cat of categories" [value]="cat.id" [disabled]="cat.del_flag">{{cat.category_name}}</ion-option>
+                </ion-select>
+            </ion-col>
+            <ion-col col-2 class="flex-center">
+                <ion-icon name="ios-arrow-forward" class="fs-24"></ion-icon>
+
+            </ion-col>
+        </ion-row>
+    </ion-list>
+    <ion-list class="mar-auto bor-top bor-bot" padding>
+        <h6>
+            <!-- City -->都市
+        </h6>
+        <ion-row class=" selct-border">
+            <ion-col col-10 class="flex-center no-padding">
+                <ion-select class="select-label wid-100 " palceholder="City" [(ngModel)]="city">
+                    <ion-option *ngFor="let c of cities" [value]="c.id">{{c.city_name}}</ion-option>
+                </ion-select>
+            </ion-col>
+            <ion-col col-2 class="flex-center">
+                <ion-icon name="ios-arrow-forward" class="fs-24"></ion-icon>
+
+            </ion-col>
+        </ion-row>
+    </ion-list>
+    <ion-list class="mar-auto bor-top bor-bot" padding>
+        <h6>
+            <!-- Sharing scope -->公開範囲</h6>
+        <ion-row class=" selct-border">
+            <ion-col col-10 class="flex-center no-padding">
+                <ion-select [(ngModel)]="share" class="select-label wid-100 ">
+                    <ion-option value="0" [selected]="true">公開</ion-option>
+                    <ion-option value="1">Private</ion-option>
+                </ion-select>
+            </ion-col>
+            <ion-col col-2 class="flex-center">
+                <ion-icon name="ios-arrow-forward" class="fs-24"></ion-icon>
+
+            </ion-col>
+        </ion-row>
+    </ion-list>
+    <br>
+
+    <ion-row>
+        <ion-col col-5 class="flex-center">
+            <img src="assets/imgs/facebook_logo.png" height="25" />
+        </ion-col>
+        <ion-col col-4 class="flex-center">
+            <h6 class="fs-14">
+                <!-- Account Name -->アカウントname</h6>
+        </ion-col>
+        <ion-col col-3 class="flex-center">
+            <div class="wid-100">
+                <ion-toggle [(ngModel)]="facebookac"  ></ion-toggle>
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col col-5 class="flex-center">
+            <img src="assets/imgs/twitter_logo.png" height="25" />
+        </ion-col>
+        <ion-col col-4 class="flex-center">
+            <h6 class="fs-14"></h6>
+        </ion-col>
+        <ion-col col-3 class="flex-center">
+            <div class="wid-100">
+                <ion-toggle  [(ngModel)]="twitterac" ></ion-toggle>
+            </div>
+        </ion-col>
+    </ion-row>
+
+
+
+    <ion-row>
+        <ion-col col-5 class="flex-center">
+            <img src="assets/imgs/instagram_logo.png" height="25" />
+        </ion-col>
+        <ion-col col-4 class="flex-center">
+            <h6 class="fs-14"></h6>
+        </ion-col>
+        <ion-col col-3 class="flex-center">
+            <div class="wid-100">
+                <ion-toggle  [(ngModel)]="instagramac"></ion-toggle>
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col text-center>
+            <button ion-button color="primary" [disabled]="!name || !category  || !comment" outline clear class="fs-20"
+                padding (click)="presentAlert()" style="padding: 18px 30px !important;">
+                投稿する
+            </button>
+        </ion-col>
+    </ion-row>
+
+    <br>
+    <br>
+    <br>
+
+</ion-content>

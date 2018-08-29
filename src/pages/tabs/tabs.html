@@ -1,0 +1,7 @@
+<ion-tabs>
+    <ion-tab [root]="tab1Root" tabIcon="hometabson"></ion-tab>
+    <ion-tab [root]="tab2Root" (ionSelect)="openTab1()"  tabIcon="tilestab"  ></ion-tab>
+    <ion-tab [root]="tab3Root"  (ionSelect)="openTab2()" tabIcon="cameratab"></ion-tab>
+    <ion-tab [root]="tab4Root"  (ionSelect)="openTab3()"  tabIcon="startab" ></ion-tab>
+    <ion-tab [root]="tab5Root" (ionSelect)="openTab4()"  tabIcon="listtab" ></ion-tab>
+</ion-tabs>

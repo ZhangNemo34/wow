@@ -1,0 +1,38 @@
+page-userlist {
+
+
+.segment-button{
+         color: #000000 !important;
+    border-color: #ffffff !important;
+    background: white !important;
+    border-bottom: 1px solid #a9a7a7 !important;
+}
+
+.segment-activated {
+    border-color: white!important;
+    opacity: 1;
+    color: #495eb7!important;
+    background-color: white!important;
+    border: none !important;
+    border-width: 0px !important;
+    border-bottom: 2px solid #495eb7!important;
+}
+
+.card-tiles{
+	    padding: 14px 21px;
+        box-shadow: 0px 0px 0px 2px #c7c7c7;
+}
+
+.fav-image{
+        height: 106px !important;
+    object-fit: cover;
+}
+
+.img-avtar {
+    border-radius: 20px;
+    width: 45px;
+    height: 45px;
+}
+
+
+}

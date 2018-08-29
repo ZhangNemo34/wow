@@ -1,0 +1,34 @@
+page-home {
+    [flat-card] {
+        box-shadow: none !important;
+    }
+    h2.low-text {
+        font-size: 0.9rem;
+    }
+    .scroll {
+        height: 100%
+    }
+    #map {
+        width: 100%;
+        height: 250px;
+    }
+    button {
+        left: 0px !important;
+    }
+    .border-grey {
+        border: 1px solid grey !important;
+    }
+    .mar-top-text {
+        margin-top: 4px !important;
+        margin-bottom: 0px !important;
+    }
+    .mar-set-label {
+        margin: 6px 6px 5px 0px !important;
+    }
+    ion-label.label.label-md {
+        margin: 6px 6px 5px 0px !important;
+    }
+    .gmnoscreen {
+        display: none !important;
+    }
+}

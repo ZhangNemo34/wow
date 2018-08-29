@@ -1,0 +1,29 @@
+<!--
+  Generated template for the OtpauthorizationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+</ion-header>
+
+<ion-content class="app_color">
+  <div class="flex-center hi-100">
+    <div class="marg-top">
+      <div class="">
+        <h4 class="text-center">Forgot password</h4>
+      </div>
+      <div class="center-div">
+        <p class="marg-2 fs-w8-5 fs-16">Mail address</p>
+        <input [(ngModel)]="email" type="text" class="inp-box" />
+      </div>
+      <div class="marg-top text-center">
+        <button class="btn width-80 btn-blue-autho fs-16" (click)="GoToConfirmPage()">Send authorization code</button>
+      </div>
+      <div class="text-center margi-10">
+        <button class="btn width-80 bg-gre fs-16" (click)="goback()">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

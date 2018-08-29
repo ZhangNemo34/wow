@@ -1,0 +1,94 @@
+<!--
+  Generated template for the PosteditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>postedit</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+<ion-header>
+    <ion-navbar color="">
+        <!-- <ion-buttons left>
+        <button ion-button icon-only class="text-trans-initial " (click)="goback()">
+        	<span class="color-blue">Cancel</span>
+          <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+    </ion-buttons> -->
+        <ion-title class="fs-12">
+            <!-- Post Edit -->投稿編集</ion-title>
+        <ion-buttons right>
+            <button ion-button outline class="text-trans-initial color-blue" (click)="update()">
+                <span class="color-blue">完了</span>
+                <!-- <ion-icon name="notifications"></ion-icon> -->
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div>
+        <ion-row>
+            <ion-col col-4>
+                <img [src]="postData.file_name" class="wid-100" />
+            </ion-col>
+            <ion-col col-8>
+                <p class="mar-auto fs-12">{{postData.comment}}</p>
+            </ion-col>
+        </ion-row>
+
+        <ion-list class="mar-auto bor-top bor-bot" padding>
+            <h5>
+                <!-- Select Category -->カテゴリ選択</h5>
+            <ion-row class=" selct-border">
+                <ion-col col-10 class="flex-center no-padding">
+                    <ion-select [(ngModel)]="postData.category" class="select-label wid-100 ">
+                        <ion-option *ngFor="let cat of categories" [value]="cat.id" [disabled]="cat.del_flag">{{cat.category_name}}</ion-option>
+                    </ion-select>
+                </ion-col>
+                <ion-col col-2 class="flex-center">
+                    <ion-icon name="ios-arrow-down" class="fs-24"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+
+        <ion-list class="mar-auto bor-top " padding>
+            <h5>
+                <!-- Sharing scope -->公開範囲</h5>
+            <ion-row>
+                <ion-col col-6 class="flex-center no-padding">
+                    <ion-row class=" selct-border">
+                        <ion-col col-10 class="flex-center no-padding">
+                            <ion-select [(ngModel)]="postData.share" class="select-label wid-100 ">
+                                <ion-option value="0" [selected]="true">公開</ion-option>
+                                <ion-option value="1">Private</ion-option>
+                            </ion-select>
+                        </ion-col>
+                        <ion-col col-2 class="flex-center">
+                            <ion-icon name="ios-arrow-down" class="fs-24"></ion-icon>
+
+                        </ion-col>
+
+                    </ion-row>
+                </ion-col>
+                <ion-col col-6 class="flex-center no-padding">
+                </ion-col>
+            </ion-row>
+
+        </ion-list>
+    </div>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-title class="text-red" (click)="presentConfirm()">
+            <!-- delete -->削除する</ion-title>
+    </ion-toolbar>
+</ion-footer>

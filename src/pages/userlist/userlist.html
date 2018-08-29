@@ -1,0 +1,91 @@
+<!--
+  Generated template for the UserlistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>
+            <!-- News -->アプリからのお知らせ</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div>
+        <ion-segment [(ngModel)]="pet" class="bg-none">
+            <ion-segment-button value="kittens">
+                <span class="text-trans-initial fs-16">
+                    <!-- Notice -->お知らせ</span>
+            </ion-segment-button>
+            <ion-segment-button value="puppies">
+                <span class="text-trans-initial fs-16">
+                    <!-- Comment -->コメント</span>
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div [ngSwitch]="pet" style="padding-top:5px;">
+        <div *ngSwitchCase="'kittens'">
+            <ion-list *ngFor="let notice of notices" class="bor-bot-1 ">
+                <ion-row>
+                    <ion-col col-2 class="flex-center">
+                        <ion-avatar item-start class="">
+                            <img src="assets/imgs/userse.png" class="img-avtar mar-auto" />
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col col-10 (click)="NoticeView()">
+                        <p class="fs-14">{{notice.username}}
+                            <ion-note class="fs-14 pad-right float-right text-black">
+                                {{notice.reg_date}}
+                            </ion-note>
+                        </p>
+                        <p class="fs-14">
+                            {{notice.content}}
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </ion-list>
+            <p text-center>続きを見る</p>
+        </div>
+
+        <div *ngSwitchCase="'puppies'">
+            <ion-list *ngFor="let comment of comments;" class="bor-bot-1 ">
+                <ion-row>
+                    <ion-col col-2>
+                        <ion-avatar item-start class="mar-06">
+                            <img *ngIf="comment.user_icon" [src]="comment.user_icon" class="img-avtar mar-auto" />
+                            <img *ngIf="!comment.user_icon" src="assets/imgs/userse.png" class="img-avtar mar-auto" />
+                        </ion-avatar>
+                    </ion-col>
+                    <ion-col col-10>
+
+                        <p class="fs-14">
+                            <ion-note class="fs-14 pad-right float-right text-black">
+                                {{comment.reg_date}}
+                            </ion-note>
+                        </p>
+                        <br>
+                        <ion-row>
+                            <ion-col col-8 class="no-padding">
+                                <p class="fs-14">
+                                    {{comment.content}}
+                                </p>
+                            </ion-col>
+                            <ion-col col-4 class="no-padding">
+                                <img [src]="comment.raw_file_name" class="fav-image" padding />
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-list>
+
+        </div>
+    </div>
+
+
+</ion-content>

@@ -1,0 +1,40 @@
+page-searchpostlist {
+
+	input.searchbar-input {
+	    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -2px rgba(86, 86, 86, 0.2), 0 0px 0px 0 rgba(68, 65, 65, 0.12);
+	    border: 1px solid #bdbdbd !important;
+	    border-radius: 12px;
+	    line-height: 2.4rem;
+	}
+
+	input.searchbar-input {
+	    border-radius: 10px !important;
+	    text-align: center !important;
+	    line-height: 2rem !important;
+	}
+
+	.searchbar-search-icon {
+    	top: 8px !important;
+	}
+
+	.img-circle {
+	    border-radius: 20px;
+	    width: 40px;
+	    height: 40px;
+	}
+
+	.pad030{
+		padding: 0px 30px;
+	}
+
+	.posi-lock{
+	    position: absolute;
+	    top: 10px;
+	    left: 10px;
+	    width: 14px;
+	}
+
+	.posi-rel{
+		position: relative;
+	}
+}

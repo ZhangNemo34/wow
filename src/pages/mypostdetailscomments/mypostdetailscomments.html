@@ -1,0 +1,163 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+        <ion-col class="no-padding">
+            <ion-icon name="ios-arrow-back" class="backbtn back-index" (click)="goback()"></ion-icon>
+            <!-- <img src="assets/imgs/map2.png" height="260" class="wid-100" imageViewer /> -->
+            <div #map id="map"></div>
+        </ion-col>
+    </ion-row>
+
+    <div>
+        <img [src]="postData.file_name" height="260" imageViewer class="wid-100" style="object-fit: contain;" />
+    </div>
+    <div class="float-right" padding>
+        <img src="assets/imgs/edit.png" height="26" (click)="DeletePost()">
+        <!-- <img src="assets/imgs/staroff.png" class="img-avtar mar-auto" *ngIf="!hideMe" (click)="SelectCat()"/>
+		<img src="assets/imgs/staron.png" class="img-avtar mar-auto"  *ngIf="hideMe" (click)="BackCat()"/> -->
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <ion-row class="bor-bot wid-100">
+        <ion-col col-2>
+            <ion-avatar item-start class="mar-06">
+                <img [src]="postData.user_icon" class="img-avtar mar-auto" />
+
+            </ion-avatar>
+        </ion-col>
+        <ion-col col-10>
+
+            <p class="fs-16" style="margin-bottom: 6px;">{{postData.username}}
+                <ion-note class="fs-14 pad-right float-right text-black">
+                    {{postData.reg_date}}
+                </ion-note>
+            </p>
+            <p class="fs-12 mar-auto">
+                
+                <br> {{postData.comment}}
+            </p>
+            <ion-row>
+                <ion-col col-3 class="no-padding">
+                    <button ion-button (click)="likePost()" icon-start clear small class="no-padding text-blue">
+                        <img src="assets/imgs/heart.png" class="icons-small">&nbsp;&nbsp;
+                        <p class="fs-12 text-blue text-trans-initial">いいね
+                            <span>{{postData.num_like}}</span>
+                        </p>
+                    </button>
+                </ion-col>
+                <ion-col col-3 class="no-padding">
+                    <ion-col col-3 class="no-padding">
+                        <button ion-button (click)="letsReply(1, 1)" icon-start clear small class="no-padding text-blue">
+                            <!-- (click)="SelectCat()" -->
+                            <!-- <ion-icon name="ios-send-outline" class="text-blue"></ion-icon> -->
+                            <img src="assets/imgs/send.png" class="icons-small">&nbsp;&nbsp;
+                            <p class="fs-12 text-blue text-trans-initial">返信
+                                <span>{{postData.num_comment}}</span>
+                            </p>
+                        </button>
+                    </ion-col>
+                </ion-col>
+                <ion-col col-3 class="no-padding">
+                    <button ion-button icon-start clear small class="no-padding text-blue">
+                        <img src="assets/imgs/share.png" class="icons-small">&nbsp;&nbsp;
+                        <p class="fs-12 text-blue text-trans-initial">シェア</p>
+                    </button>
+                </ion-col>
+                <ion-col col-3 class="no-padding flex-center ">
+                    <ion-note>
+                        <ion-icon name="ios-close" class="fs-24 fs-w8-8" (click)="Report()"></ion-icon>
+                    </ion-note>
+                </ion-col>
+            </ion-row>
+            <ion-list ion-row>
+                <ion-item ion-col *ngIf="postComment">
+                    <button ion-button item-end icon-only (click)="reply()" clear small class="no-padding text-blue">
+                        <img src="assets/imgs/share.png" class="icons-small">
+                    </button>
+                    <ion-label>Comment</ion-label>
+                    <ion-input type="text" [(ngModel)]="comment"></ion-input>
+                </ion-item>
+            </ion-list>
+        </ion-col>
+    </ion-row>
+
+
+    <div *ngFor="let comment of commentsLimit | slice : 0: 3">
+        <ion-row class="">
+            <ion-col col-2>
+                <ion-avatar item-start class="mar-06">
+                    <img *ngIf="comment.user_icon" [src]="comment.user_icon" class="img-avtar mar-auto" />
+                    <img *ngIf="!comment.user_icon" src="assets/imgs/userse.png" class="img-avtar mar-auto" />
+                </ion-avatar>
+            </ion-col>
+            <ion-col col-10>
+                <p class="fs-16" style="margin-bottom: 6px;">{{comment.username}}
+                    <ion-note class="fs-14 pad-right float-right text-black">
+                        {{comment.reg_date}}
+                    </ion-note>
+                </p>
+                <p class="fs-12 mar-auto">
+                    {{comment.content}}
+                </p>
+                <ion-row>
+                    <ion-col col-6 class="no-padding">
+                        <button (click)="likeComment(comment.id)" ion-button icon-start clear small class="no-padding text-blue">
+                            <!-- <ion-icon name="ios-heart" class="text-blue"></ion-icon> -->
+                            <img src="assets/imgs/heart.png" class="icons-small">&nbsp;&nbsp;
+                            <p class="fs-12 text-blue text-trans-initial">いいね
+                                <span>{{comment.num_like}}</span>
+                            </p>
+                        </button>
+                    </ion-col>
+                    <ion-col col-6 class="no-padding">
+                        <button (click)="letsReply(2, comment.id)" ion-button icon-start clear small class="no-padding text-blue">
+                            <!-- (click)="SelectCat()" -->
+                            <!-- <ion-icon name="ios-send-outline" class="text-blue"></ion-icon> -->
+                            <img src="assets/imgs/send.png" class="icons-small">&nbsp;&nbsp;
+                            <p class="fs-12 text-blue text-trans-initial">返信
+                                <span>{{comment.num_reply}}</span>
+                            </p>
+                        </button>
+                    </ion-col>
+                </ion-row>
+                <ion-list>
+                    <ion-item *ngIf="reComment && commentId == comment.id">
+                        <button ion-button item-end icon-only (click)="reply()" clear small class="no-padding text-blue">
+                            <img src="assets/imgs/share.png" class="icons-small">
+                        </button>
+                        <ion-label>Comment</ion-label>
+                        <ion-input type="text" [(ngModel)]="recomment"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+        <div padding *ngIf="comment.comments">
+            <!-- *ngIf="hideMe" -->
+            <ion-row *ngFor="let c of comment.comments">
+                <ion-col col-2>
+                    <ion-avatar item-start class="mar-06">
+                        <img [src]="c.user_icon" class="img-avtar mar-auto" />
+                    </ion-avatar>
+                </ion-col>
+                <ion-col col-10>
+                    <p class="fs-16" style="margin-bottom: 6px;">{{c.username}}
+                        <ion-note class="fs-14 pad-right float-right text-black">
+                            {{c.reg_date}}
+                        </ion-note>
+                    </p>
+                    <p class="fs-12 mar-auto">
+                        {{c.content}}
+                    </p>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+    <ion-item *ngIf="postData.num_comment > 3" class="text-blue" (click)="MorePostComments()">
+        <!-- delete -->Show All</ion-item>
+
+</ion-content>

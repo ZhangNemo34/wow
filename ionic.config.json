@@ -1,0 +1,13 @@
+{
+  "name": "wOw",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/api/",
+      "proxyUrl": "http://18.217.92.179/index.php/api/"
+    }
+  ]
+}

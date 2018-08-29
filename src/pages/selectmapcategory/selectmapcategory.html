@@ -1,0 +1,265 @@
+<ion-header>
+
+  <!-- <ion-navbar>
+    <ion-title>selectcategory</ion-title>
+  </ion-navbar> -->
+
+</ion-header>
+
+<!-- <ion-row>
+		 <ion-col>
+			  <img src="assets/imgs/map2.png" height="160" class="wid-100" />
+			  <div class="float-right padding">
+				<ion-icon name="md-star-outline" class="padding fs-24"></ion-icon>
+			</div>
+		  </ion-col>
+	  </ion-row> -->
+
+
+<ion-content>
+
+
+  <ion-row>
+    <ion-col class="no-padding">
+      <ion-icon name="ios-arrow-back" class="backbtn back-index" (click)="goback()"></ion-icon>
+      <img src="assets/imgs/gps.png" class="gps-posi" />
+      <img src="assets/imgs/mapname.png" class="map-text" (click)="launchNavigate()" />
+      <div #map id="map"></div>
+    </ion-col>
+  </ion-row>
+
+  <div>
+    <img src="assets/imgs/flowes.png" height="260" imageViewer class="wid-100" style="object-fit: contain;" />
+  </div>
+  <!-- <div class="float-right" padding>
+			<ion-icon name="md-star-outline" class="fs-32"></ion-icon>
+		</div> -->
+
+  <div class="float-right" padding>
+    <!-- <ion-icon name="md-star-outline" class="fs-32" ></ion-icon> -->
+    <img src="assets/imgs/staroff.png" class="img-avtar mar-auto" *ngIf="!hideMe" (click)="SelectCat()" />
+    <img src="assets/imgs/staron.png" class="img-avtar mar-auto" *ngIf="hideMe" (click)="BackCat()" />
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <ion-row class="bor-bot wid-100">
+    <ion-col col-2>
+      <ion-avatar item-start class="mar-06">
+        <img src="assets/imgs/Ellipse.png" class="img-avtar mar-auto" />
+      </ion-avatar>
+    </ion-col>
+    <ion-col col-10>
+
+      <p class="fs-16" style="margin-bottom: 6px;">ユーザーネーム
+        <ion-note class="fs-14 pad-right float-right text-black">2017/11/1&nbsp;&nbsp;
+          <span class="fs-14">18:00</span>
+        </ion-note>
+      </p>
+      <p class="fs-12 mar-auto">
+        コメントコメントコメントコメントコメントコメント コメントコメントコメントコメントコメントコメント
+      </p>
+      <ion-row>
+        <ion-col col-3 class="no-padding">
+          <button ion-button icon-start clear small class="no-padding text-blue">
+            <!-- <ion-icon name="ios-heart" class="text-blue"></ion-icon> -->
+            <img src="assets/imgs/heart.png" class="icons-small">&nbsp;&nbsp;
+            <p class="fs-12 text-blue text-trans-initial">いいね
+              <span>1</span>
+            </p>
+          </button>
+        </ion-col>
+        <ion-col col-3 class="no-padding">
+          <button ion-button icon-start clear small class="no-padding text-blue">
+            <!-- <ion-icon name="ios-send-outline" class="text-blue"></ion-icon> -->
+            <img src="assets/imgs/send.png" class="icons-small">&nbsp;&nbsp;
+            <p class="fs-12 text-blue text-trans-initial">返信
+              <span>4</span>
+            </p>
+          </button>
+        </ion-col>
+        <ion-col col-3 class="no-padding">
+          <button ion-button icon-start clear small class="no-padding text-blue">
+            <img src="assets/imgs/share.png" class="icons-small">&nbsp;&nbsp;
+            <p class="fs-12 text-blue text-trans-initial">シェア</p>
+          </button>
+        </ion-col>
+        <ion-col col-3 class="no-padding flex-center ">
+          <ion-note>
+            <ion-icon name="ios-close" class="fs-24 fs-w8-8" (click)="Report()"></ion-icon>
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <div *ngFor="let i of [1,1]; let j='index'">
+    <ion-row class="wid-100">
+      <ion-col col-2>
+        <ion-avatar item-start class="mar-06">
+          <img src="assets/imgs/circleimg.png" class="img-avtar mar-auto" />
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-10>
+        <p class="fs-16" style="margin-bottom: 6px;">
+          <!-- User name -->ユーザーネーム
+          <ion-note class="fs-14 pad-right float-right text-black">2017/11/1&nbsp;&nbsp;
+            <span class="fs-14">18:00</span>
+          </ion-note>
+        </p>
+        <p class="fs-12 mar-auto">
+          コメントコメントコメントコメントコメントコメント コメントコメントコメントコメントコメントこメ
+        </p>
+        <ion-row>
+          <ion-col col-3 class="no-padding">
+            <button ion-button icon-start clear small class="no-padding text-blue">
+              <!-- <ion-icon name="ios-heart" class="text-blue"></ion-icon> -->
+              <img src="assets/imgs/heart.png" class="icons-small">&nbsp;&nbsp;
+              <p class="fs-12 text-blue text-trans-initial">いいね
+                <span>1</span>
+              </p>
+            </button>
+          </ion-col>
+          <ion-col col-3 class="no-padding">
+            <button ion-button icon-start clear small class="no-padding text-blue">
+              <!-- (click)="SelectCat()" -->
+              <!-- <ion-icon name="ios-send-outline" class="text-blue"></ion-icon> -->
+              <img src="assets/imgs/send.png" class="icons-small">&nbsp;&nbsp;
+              <p class="fs-12 text-blue text-trans-initial">返信
+                <span>4</span>
+              </p>
+            </button>
+          </ion-col>
+          <ion-col col-3 class="no-padding">
+            <button ion-button icon-start clear small class="no-padding text-blue">
+              <img src="assets/imgs/share.png" class="icons-small">&nbsp;&nbsp;
+              <!-- <ion-icon name="share-alt" class="text-blue"></ion-icon>  -->
+              <p class="fs-12 text-blue text-trans-initial">シェア</p>
+            </button>
+          </ion-col>
+          <ion-col col-3 class="no-padding flex-center ">
+            <ion-note>
+              <ion-icon name="ios-close" class="fs-24 fs-w8-8" (click)="Report()"></ion-icon>
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <div padding>
+      <!-- *ngIf="hideMe" -->
+      <ion-row class="bor-bot">
+        <ion-col col-2>
+          <ion-avatar item-start class="mar-06">
+            <img src="assets/imgs/circle2.png" class="img-avtar mar-auto" />
+          </ion-avatar>
+        </ion-col>
+        <ion-col col-10>
+          <p class="fs-16" style="margin-bottom: 6px;">ユーザーネーム
+            <ion-note class="fs-14 pad-right float-right text-black">2017/11/1&nbsp;&nbsp;
+              <span class="fs-14">18:00</span>
+            </ion-note>
+          </p>
+          <p class="fs-12 mar-auto">
+            コメントコメントコメントコメントコメントコメント コメントコメントコメントコメントコメントこメン
+          </p>
+          <ion-row>
+            <ion-col col-3 class="no-padding">
+              <button ion-button icon-start clear small class="no-padding text-blue">
+                <!-- <ion-icon name="ios-heart" class="text-blue"></ion-icon> -->
+                <img src="assets/imgs/heart.png" class="icons-small">&nbsp;&nbsp;
+                <p class="fs-12 text-blue text-trans-initial">いいね
+                  <span>1</span>
+                </p>
+              </button>
+            </ion-col>
+            <ion-col col-3 class="no-padding">
+              <button ion-button icon-start clear small class="no-padding text-blue">
+                <!-- <ion-icon name="ios-send-outline" class="text-blue"></ion-icon> -->
+                <img src="assets/imgs/send.png" class="icons-small">&nbsp;&nbsp;
+                <p class="fs-12 text-blue text-trans-initial">返信
+                  <span>4</span>
+                </p>
+              </button>
+            </ion-col>
+            <ion-col col-3 class="no-padding">
+              <!-- 		      <button ion-button icon-start clear small class="no-padding text-blue">
+		      	<img src="assets/imgs/share.png" class="icons-small">&nbsp;&nbsp;
+		        <p class="fs-12 text-blue text-trans-initial">Share</p>
+		      </button> -->
+            </ion-col>
+            <ion-col col-3 class="no-padding flex-center ">
+              <ion-note>
+                <ion-icon name="ios-close" class="fs-24 fs-w8-8" (click)="Report()"></ion-icon>
+              </ion-note>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <ion-row *ngFor="let i of [1,1]; let j='index'" class="bor-bot">
+    <ion-col col-2>
+      <ion-avatar item-start class="mar-06">
+        <img src="assets/imgs/circleimg.png" class="img-avtar mar-auto" />
+      </ion-avatar>
+    </ion-col>
+    <ion-col col-10>
+
+      <p class="fs-16" style="margin-bottom: 6px;">ユーザーネーム
+        <ion-note class="fs-14 pad-right float-right text-black">2017/11/1&nbsp;&nbsp;
+          <span class="fs-14">18:00</span>
+        </ion-note>
+      </p>
+      <p class="fs-12 mar-auto">
+        コメントコメントコメントコメントコメントコメント コメントコメントコメントコメントコメントこメン
+      </p>
+      <ion-row>
+        <ion-col col-3 class="no-padding">
+          <button ion-button icon-start clear small class="no-padding text-blue">
+            <!-- <ion-icon name="ios-heart" class="text-blue"></ion-icon> -->
+            <img src="assets/imgs/heart.png" class="icons-small">&nbsp;&nbsp;
+            <p class="fs-12 text-blue text-trans-initial">いいね
+              <span>1</span>
+            </p>
+          </button>
+        </ion-col>
+        <ion-col col-3 class="no-padding">
+          <button ion-button icon-start clear small class="no-padding text-blue">
+            <!-- <ion-icon name="ios-send-outline" class="text-blue"></ion-icon> -->
+            <img src="assets/imgs/send.png" class="icons-small">&nbsp;&nbsp;
+            <p class="fs-12 text-blue text-trans-initial">返信
+              <span>4</span>
+            </p>
+          </button>
+        </ion-col>
+        <ion-col col-3 class="no-padding">
+          <!-- <button ion-button icon-start clear small class="no-padding text-blue">
+		      	<img src="assets/imgs/share.png" class="icons-small">&nbsp;&nbsp;
+		        <p class="fs-12 text-blue text-trans-initial">Share</p>
+		      </button> -->
+        </ion-col>
+        <ion-col col-3 class="no-padding flex-center ">
+          <ion-note>
+            <ion-icon name="ios-close" class="fs-24 fs-w8-8" (click)="Report()"></ion-icon>
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <br>
+  <br>
+
+  <ion-row>
+    <ion-col text-center>
+      <button class=" btn-set bg-none" style="border-radius: 4px;" (click)="MorePostComments()">
+        <!-- See more comments -->コメントをもっと見る</button>
+    </ion-col>
+  </ion-row>
+  <br>
+  <br>
+</ion-content>
