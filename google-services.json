@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1004579986337",
+    "firebase_url": "https://wowapp-201808.firebaseio.com",
+    "project_id": "wowapp-201808",
+    "storage_bucket": "wowapp-201808.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004579986337:android:7f6383b29a9f32d8",
+        "android_client_info": {
+          "package_name": "io.wowapp.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004579986337-4e7t3rcet0pjkn8o7slvqb5lggbso328.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8BxzV_CDvxlpR_4tT6HWSeNuD-YbdFA4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

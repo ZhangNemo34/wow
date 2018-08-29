@@ -17,6 +17,9 @@ import { WelcomePage } from '../pages/welcome/welcome';
 //import { UserconfirmPage } from '../pages/userconfirm/userconfirm';
 //import { UseraddmultiplePage } from '../pages/useraddmultiple/useraddmultiple';
 
+import { Push, PushObject, PushOptions } from '@ionic-native/push';
+import { Storage } from '@ionic/storage';
+
 @Component({
   templateUrl: 'app.html' 
 })
@@ -24,12 +27,37 @@ export class MyApp {
  //rootPage:any = MapfullscreenPage;
  rootPage:any = WelcomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private push: Push, private storage: Storage) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+
+      const options: PushOptions = {
+        android: {},
+        ios: {
+            alert: 'true',
+            badge: true,
+            sound: 'false'
+        },
+        windows: {},
+        browser: {
+            pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+        }
+     };
+     
+     const pushObject: PushObject = this.push.init(options);
+     
+     
+     pushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
+     
+     pushObject.on('registration').subscribe((registration: any) => {
+      this.storage.set('token', registration.registrationId); 
+      console.log('Device registered', registration)
+     });
+     
+     pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
     });
   }
 }

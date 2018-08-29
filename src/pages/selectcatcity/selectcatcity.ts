@@ -54,7 +54,12 @@ export class SelectcatcityPage {
                 console.log("success",res);
                 this.storage.set('loginType', this.loginType);
                 this.navCtrl.push(TabsPage);
-            },err => {console.log("err",err);this.loadingHide();});
+            },err => {
+                if(err.error && err.error.content)
+            alert(err.error.content);
+            
+                console.log("err",err);this.loadingHide();
+            });
     }
 
     GoSelectCat() {

@@ -24,13 +24,21 @@ export class EmailloginPage {
     password: string;
     public Regex: string;
     load: any;
+    token: string = "";
 
     constructor(public navCtrl: NavController, public navParams: NavParams,
         private login: LoginProvider, private storage: Storage,public loadingCtrl: LoadingController) {
+            
+             
     }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad EmailloginPage');
+        this.storage.get('token').then(data=>{
+            if(data){
+                this.token = data;
+            }
+        });
     }
 
     // Alphanumeric(){
@@ -49,7 +57,7 @@ export class EmailloginPage {
 
     GoTabsPage() {
         this.loadingShow();
-        this.login.emailLogin(this.email, this.password).then(loginRes => {
+        this.login.emailLogin(this.email, this.password, this.token).then(loginRes => {
             this.loadingHide();
             
 
