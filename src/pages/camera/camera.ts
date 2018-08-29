@@ -134,12 +134,15 @@ export class CameraPage {
         console.log('ionViewDidLoad CameraPage');
     }
 
-    takePhoto() {
+    takePhoto(srcType) {
         const options: CameraOptions = {
-            quality: 50, // picture quality
+            quality: 100,
             destinationType: this.camera.DestinationType.DATA_URL,
             encodingType: this.camera.EncodingType.JPEG,
-            mediaType: this.camera.MediaType.PICTURE
+            mediaType: this.camera.MediaType.PICTURE,
+            sourceType: srcType,
+            allowEdit: true,
+            correctOrientation: true
         }
         this.camera.getPicture(options).then((imageData) => {
             this.base64Image = "data:image/jpeg;base64," + imageData;
@@ -246,13 +249,14 @@ export class CameraPage {
                     text: 'カメラを起動する',
                     role: 'destructive',
                     handler: () => {
-                        this.takePhoto();
+                        this.takePhoto(this.camera.PictureSourceType.CAMERA);
                         console.log('Destructive clicked');
                     }
                 },
                 {
                     text: 'ライブラリから選択',
                     handler: () => {
+                        this.takePhoto(this.camera.PictureSourceType.PHOTOLIBRARY);
                         console.log('Archive clicked');
                     }
                 },
