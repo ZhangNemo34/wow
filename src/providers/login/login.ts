@@ -19,15 +19,15 @@ export class LoginProvider {
         console.log('Hello LoginProvider Provider');
     }
 
-    emailLogin(email, password) {
+    emailLogin(email, password, token) {
         let headers = this.headers;
-        let body = 'email=' + email + '&password=' + password;
+        let body = 'email=' + email + '&password=' + password + '&token=' + token;
         return this.http.post(`${this.api}`, body, { headers }).toPromise();
     }
 
-    socialLogin(method, id, username, image) {
+    socialLogin(method, id, username, image, token) {
         let headers = this.headers;
-        let body = 'method=' + method + '&id=' + id + '&username=' + username + '&user_icon=' + image;
+        let body = 'method=' + method + '&id=' + id + '&username=' + username + '&user_icon=' + image + '&token=' + token;
         return this.http.post(`${this.api}/social_login`, body, { headers }).toPromise();
     }
 

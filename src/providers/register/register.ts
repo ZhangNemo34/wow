@@ -32,13 +32,13 @@ export class RegisterProvider {
         return this.http.post(`${this.api}/email`, body, { headers }).toPromise();
     }
 
-    register(user_id, username, password, email, user_icon) {
+    register(user_id, username, password, email, user_icon, token) {
         let headers = this.headers;
         let body = "";
         if(user_icon)
-        body = `user_id=${user_id}&username=${username}&password=${password}&email=${email}&user_icon=${user_icon}`;
+        body = `user_id=${user_id}&username=${username}&password=${password}&email=${email}&user_icon=${user_icon}&token=${token}`;
         else
-        body = `user_id=${user_id}&username=${username}&password=${password}&email=${email}`;
+        body = `user_id=${user_id}&username=${username}&password=${password}&email=${email}&token=${token}`;
 
         return this.http.post(`${this.api}/insert`, body, { headers }).toPromise();
     }

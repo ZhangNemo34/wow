@@ -65,6 +65,8 @@ import { ReplyCommentPage } from '../pages/replycomment/replycomment';
 import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
+import { Push } from '@ionic-native/push';
+
 @NgModule({
     declarations: [
         MyApp,
@@ -182,7 +184,8 @@ import { SocialSharing } from '@ionic-native/social-sharing';
         AccountProvider,
         AdvertiseProvider,
         NativeGeocoder,
-        SocialSharing
+        SocialSharing,
+        Push
 
     ]
 })

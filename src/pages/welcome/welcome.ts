@@ -35,6 +35,7 @@ export class WelcomePage {
         clientId: "f87805ded46b4198a5f479367cfaf905",
         appScope: ["basic"]
     });
+    token: string;
     constructor(public navCtrl: NavController, public navParams: NavParams,
         private platform: Platform, private twitter: TwitterConnect,
         public welcomeProvider: WelcomeProvider, public login: LoginProvider,
@@ -54,8 +55,11 @@ export class WelcomePage {
                 });
             }
         });
-
-        this.storage.set('sign_id',null)
+        this.storage.get('token').then(data=>{
+            if(data){
+                this.token = data;
+            }
+        });
     }
 
     goToNext() {
@@ -74,7 +78,7 @@ export class WelcomePage {
                 console.log(JSON.stringify(success));
                 this.welcomeProvider.getUsersDetailsFromFacebook(success['access_token']).subscribe(data => {
                     console.log(JSON.stringify(data));
-                    this.login.socialLogin('facebook', data.id, data.name, "https://graph.facebook.com/"+data.id+"/picture?width=1024&height=1024").then(loginRes => {
+                    this.login.socialLogin('facebook', data.id, data.name, "https://graph.facebook.com/"+data.id+"/picture?width=1024&height=1024", this.token).then(loginRes => {
                         console.log(loginRes);
                        
                         if(loginRes['content']['sign_id']){
@@ -105,7 +109,7 @@ export class WelcomePage {
             this.oauth.logInVia(this.instagramProvider).then(success => {
                 console.log("RESULT: " + JSON.stringify(success));
                 this.welcomeProvider.getUserDetailsFromInstagram(success['access_token']).subscribe(data => {
-                    this.login.socialLogin('instagram', data.data.id, data.data.username, data.data.profile_picture).then(loginRes => {
+                    this.login.socialLogin('instagram', data.data.id, data.data.username, data.data.profile_picture, this.token).then(loginRes => {
                         this.storage.set('sign_id', loginRes['content']['sign_id']);
                         
                         if(!loginRes['content']['category_id1'] || !loginRes['content']['category_id2'] || !loginRes['content']['city'] && loginRes['content']['category_id1'] == "0" || loginRes['content']['category_id2'] == "0" || loginRes['content']['city'] == "0" ){
@@ -130,7 +134,7 @@ export class WelcomePage {
             console.log(res);
             this.twitter.showUser().then(data=>{
                 console.log(data.id_str, data.screen_name, data.profile_image_url);
-                this.login.socialLogin('twitter', data.id_str, data.screen_name, data.profile_image_url).then(loginRes => {
+                this.login.socialLogin('twitter', data.id_str, data.screen_name, data.profile_image_url, this.token).then(loginRes => {
                     console.log(loginRes);
                     this.storage.set('sign_id', loginRes['content']['sign_id']);
                     
@@ -146,7 +150,7 @@ export class WelcomePage {
             .catch(data=>{
                 console.log("error::::",data);
                 if(data.id_str && data.screen_name && data.profile_image_url){
-                    this.login.socialLogin('twitter', data.id_str, data.screen_name, data.profile_image_url).then(loginRes => {
+                    this.login.socialLogin('twitter', data.id_str, data.screen_name, data.profile_image_url, this.token).then(loginRes => {
                         console.log(loginRes);
                         this.storage.set('sign_id', loginRes['content']['sign_id']);
                         if(!loginRes['content']['category_id1'] || !loginRes['content']['category_id2'] || !loginRes['content']['city'] && loginRes['content']['category_id1'] == "0" || loginRes['content']['category_id2'] == "0" || loginRes['content']['city'] == "0" ){

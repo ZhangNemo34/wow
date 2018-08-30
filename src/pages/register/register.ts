@@ -24,6 +24,7 @@ export class RegisterPage {
     email: string;
     user_id: string;
     load: any;
+    token: any;
 
 
     constructor(public navCtrl: NavController, private camera: Camera, public navParams: NavParams,
@@ -41,11 +42,16 @@ export class RegisterPage {
         //   this.Emails =this.navParams.get('params');
         //   console.log(this.Emails)
         // }
+        this.storage.get('token').then(data=>{
+            if(data){
+                this.token = data;
+            }
+        });
     }
 
     GoSelectCatCityPage() {
         this.loadingShow();
-        this.register.register(this.user_id, this.username, this.password, this.email, this.photo)
+        this.register.register(this.user_id, this.username, this.password, this.email, this.photo, this.token)
             .then(data => {
                 this.loadingHide();
                 console.log("success",data);
