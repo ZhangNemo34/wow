@@ -25,15 +25,14 @@ import { Storage } from '@ionic/storage';
 })
 export class MyApp {
  //rootPage:any = MapfullscreenPage;
- rootPage:any;
-
+ rootPage:any = WelcomePage;
+ 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private push: Push, private storage: Storage) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-
       const options: PushOptions = {
         android: {},
         ios: {
@@ -59,7 +58,8 @@ export class MyApp {
         console.log("Device err",err);
       })
       console.log('Device registered', registration);
-      this.rootPage = WelcomePage;
+      
+
      });
      
      pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
