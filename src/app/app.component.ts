@@ -25,7 +25,7 @@ import { Storage } from '@ionic/storage';
 })
 export class MyApp {
  //rootPage:any = MapfullscreenPage;
- rootPage:any = WelcomePage;
+ rootPage:any;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private push: Push, private storage: Storage) {
     platform.ready().then(() => {
@@ -53,8 +53,13 @@ export class MyApp {
      pushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
      
      pushObject.on('registration').subscribe((registration: any) => {
-      this.storage.set('token', registration.registrationId); 
-      console.log('Device registered', registration)
+      this.storage.set('token', registration.registrationId).then((res)=>{
+        console.log("Device",res);
+      }).catch(err=>{
+        console.log("Device err",err);
+      })
+      console.log('Device registered', registration);
+      this.rootPage = WelcomePage;
      });
      
      pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));

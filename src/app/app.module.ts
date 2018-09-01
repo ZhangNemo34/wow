@@ -119,7 +119,10 @@ import { Push } from '@ionic-native/push';
         WelcomePageModule,
         HttpClientModule,
         IonicModule.forRoot(MyApp),
-        IonicStorageModule.forRoot()
+        IonicStorageModule.forRoot({
+            name: '__wow',
+               driverOrder: ['indexeddb', 'sqlite', 'websql']
+          })
     ],
     bootstrap: [IonicApp],
     entryComponents: [

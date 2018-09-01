@@ -34,10 +34,12 @@ export class EmailloginPage {
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad EmailloginPage');
+        
+    }
+
+    ionViewWillEnter(){
         this.storage.get('token').then(data=>{
-            if(data){
-                this.token = data;
-            }
+            this.token = data;
         });
     }
 

@@ -42,10 +42,12 @@ export class RegisterPage {
         //   this.Emails =this.navParams.get('params');
         //   console.log(this.Emails)
         // }
+    }
+
+    ionViewWillEnter(){
         this.storage.get('token').then(data=>{
-            if(data){
-                this.token = data;
-            }
+            this.token = data;
+            console.log(this.token);
         });
     }
 

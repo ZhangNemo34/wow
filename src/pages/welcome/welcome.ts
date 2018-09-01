@@ -39,12 +39,12 @@ export class WelcomePage {
     constructor(public navCtrl: NavController, public navParams: NavParams,
         private platform: Platform, private twitter: TwitterConnect,
         public welcomeProvider: WelcomeProvider, public login: LoginProvider,
-        private storage: Storage
+        private storage: Storage 
     ) {
     }
 
     ionViewDidLoad() {
-        console.log('ionViewDidLoad WelcomePage');
+        console.log('ionViewDidLoad WelcomePage');  
         this.storage.get('sign_id').then(data=>{
             console.log("sign_id",data);
             if(data){
@@ -55,11 +55,7 @@ export class WelcomePage {
                 });
             }
         });
-        this.storage.get('token').then(data=>{
-            if(data){
-                this.token = data;
-            }
-        });
+        
     }
 
     goToNext() {
@@ -74,6 +70,10 @@ export class WelcomePage {
 
     public facebook() {
         this.platform.ready().then(() => {
+            this.storage.get('token').then(data=>{
+                this.token = data;
+                console.log("welcome",data);
+            });
             this.oauth.logInVia(this.facebookProvider).then(success => {
                 console.log(JSON.stringify(success));
                 this.welcomeProvider.getUsersDetailsFromFacebook(success['access_token']).subscribe(data => {
@@ -106,6 +106,10 @@ export class WelcomePage {
 
     public instagram() {
         this.platform.ready().then(() => {
+            this.storage.get('token').then(data=>{
+                this.token = data;
+                console.log("welcome",data);
+            });
             this.oauth.logInVia(this.instagramProvider).then(success => {
                 console.log("RESULT: " + JSON.stringify(success));
                 this.welcomeProvider.getUserDetailsFromInstagram(success['access_token']).subscribe(data => {
@@ -131,6 +135,10 @@ export class WelcomePage {
 
     public twitterLogin() {
         this.twitter.login().then(res => {
+            this.storage.get('token').then(data=>{
+                this.token = data;
+                console.log("welcome",data);
+            });
             console.log(res);
             this.twitter.showUser().then(data=>{
                 console.log(data.id_str, data.screen_name, data.profile_image_url);
